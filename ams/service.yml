@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-service
+  namespace: my-new-namespace-1  # Change to the appropriate namespace
 spec:
   selector:
     app: nginx  # Matches the Deployment's pods
