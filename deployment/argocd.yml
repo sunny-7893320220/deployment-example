@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-billing-app
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  sources:
+    - repoURL: https://github.com/sunny-7893320220/deployment-example.git
+      path: ams
+      targetRevision: main
+    - repoURL: https://github.com/sunny-7893320220/deployment-example.git
+      path: lms
+      targetRevision: main
+    - repoURL: https://github.com/sunny-7893320220/deployment-example.git
+      path: qa
+      targetRevision: main
+    - repoURL: https://github.com/sunny-7893320220/deployment-example.git
+      path: prod
+      targetRevision: main
+    - repoURL: https://github.com/sunny-7893320220/deployment-example.git
+      path: uat
+      targetRevision: main
